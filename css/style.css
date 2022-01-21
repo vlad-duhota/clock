@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 5vh 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #091921, #163241, #061218, #163241);
+    background-size: 400% 400%;
+    animation: bg 30s ease infinite;
+    height: 100vh;
+}
+
+@keyframes bg {
+    0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+h1{
+    color: #fff;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 50px;
+    font-family: fantasy;
+    letter-spacing: 2.5px;
+}
+
+p{
+    color: #fff;
+    font-size: 24px;
+    margin-top: 40px;
+    text-align: center;
+    font-family: fantasy;
+    animation: swing 3s ease-in-out infinite;
+}
+@keyframes swing {
+   0%{
+       transform: rotate(0deg);
+   } 
+   25%{
+    transform: rotate(2deg);
+   }
+   75%{
+    transform: rotate(-2deg);
+   }
+   100%{
+    transform: rotate(0deg);
+   }
+}
+.clock{
+    position: relative;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../img/clock.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 4px solid #091921;
+    border-radius: 50%;
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, .05),
+        inset 0 -15px 15px rgba(255, 255, 255, .05),
+        0 15px 15px rgba(0, 0, 0, .3),
+        inset 0 -15px 15px rgba(0, 0, 0, .3);
+}
+
+.clock::before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 20;
+}
+
+
+.mn{
+    position: absolute;
+    border-radius: 50%;
+    z-index: 10;
+    width: 4px;
+    height: 90px;
+    top: 85px;
+    background: #fff;
+    border-radius: 6px 6px 0 0;
+    transform-origin: bottom;
+    animation: min-arrow 3600s linear infinite;
+}
+
+.sc{
+    position: absolute;
+    z-index: 11;
+    width: 2px;
+    height: 150px;
+    top: 28px;
+    border-radius: 50%;
+    background: #ff105e;
+    border-radius: 6px 6px 0 0;
+    animation: sec-arrow 60s linear infinite;
+    transform-origin: bottom;
+}
+
+@keyframes sec-arrow{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes min-arrow{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.footer{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.schoology-logo{
+    display: block;
+    width: 150px;
+    height: 80px;
+}
+
+.left-part{
+    display: flex;
+}
+
+.left-part a{
+    margin-left: 30px;
+}
+
+.left-part a img{
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
